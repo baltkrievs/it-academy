@@ -26,10 +26,32 @@ public class TaskB {
             //if(j % rowSize == 0) System.out.println();
         }
 
-        for(int j = 1, s = 0; j <= numOfElements; j++, s--){
-            System.out.print(j + rowSize - s + "\t");
+        int[][] matrix = new int[rowSize][rowSize];
+        int currentElement = 1;
 
-            if(j % rowSize == 0) System.out.println();
+            for(int x = 0; x < rowSize; x++){
+                boolean isStop = false;
+                for(int y = 0; y < rowSize; y++){
+                    matrix[y][x] = currentElement;
+                    currentElement++;
+                    if(currentElement > numOfElements) {
+                        isStop = true;
+                        break;
+                    }
+                }
+                if(isStop) break;
+            }
+
+//        for(int[] arr : matrix) {
+//            System.out.println(Arrays.toString(arr));
+//        }
+
+        for(int j = 0; j < matrix.length; j++){
+            for(int k = 0; k < matrix.length; k++){
+                if(matrix[j][k] != 0)
+                    System.out.print(matrix[j][k] + "\t");
+            }
+            System.out.println();
         }
 
     }

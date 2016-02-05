@@ -12,6 +12,6 @@ public class Main {
         TaskB b = new TaskB();
         int[] interval = {1, 5};
         boolean isBelongs = b.isBelongsToInterval(5, interval);
-        b.printMatrix(64);
+        b.printMatrix(100);
     }
 }
