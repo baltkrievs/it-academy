@@ -1,4 +1,4 @@
-package by.baltkrievs;
+package by.baltkrievs.tasks;
 
 public class TaskB {
 
@@ -54,6 +54,30 @@ public class TaskB {
             System.out.println();
         }
 
+    }
+
+
+    public void solveQuadraticEquation(double a, double b, double c){
+        if(a == 0){
+            System.out.println("a should not be 0");
+            return;
+        }
+        double d = Math.pow(b, 2) - 4 * a * c;
+        //System.out.println("D = " + d);
+        if (d < 0){
+            System.out.println("There are no roots for that parameters..");
+        }
+        if (d == 0){
+            System.out.println("x = " + (b * (-1) + Math.sqrt(d)) / (a * 2));
+        }
+        else{
+            System.out.println("x1 = " + (b * (-1) - Math.sqrt(d)) / (a * 2) +
+                " x2 = " + (b * (-1) + Math.sqrt(d)) / (a * 2));
+        }
+    }
+
+    public void solveQuadraticEquation(double a, double b){
+        solveQuadraticEquation(a, b, 0);
     }
 
     /**

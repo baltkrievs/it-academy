@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class Matrix {
 
-    public static void printMatrix(int[][] matrix){
-        for(int[] row : matrix){
+    public static void printMatrix(double[][] matrix){
+        for(double[] row : matrix){
             System.out.println(Arrays.toString(row));
         }
 //        for(int row = 0; row < matrix.length; row++){
@@ -18,9 +18,9 @@ public class Matrix {
 //        }
     }
 
-    public static int[][] generateMatrix(int matrixSize){
+    public static double[][] generateMatrix(int matrixSize){
 
-        int[][] matrix = new int[matrixSize][matrixSize];
+        double[][] matrix = new double[matrixSize][matrixSize];
         Random random = new Random(Calendar.getInstance().getTimeInMillis());
         for(int i = 0; i < matrixSize; i++){
             for(int j = 0; j < matrixSize; j++){
@@ -30,8 +30,8 @@ public class Matrix {
         return matrix;
     }
 
-    public static int getMaxElement(int[][] matrix){
-        int maxElement = Integer.MIN_VALUE;
+    public static double getMaxElement(double[][] matrix){
+        double maxElement = Double.MIN_VALUE;
         for (int row = 0; row < matrix.length; row++){
             for (int col = 0; col < matrix[row].length; col++){
                 if (matrix[row][col] > maxElement){
@@ -42,9 +42,9 @@ public class Matrix {
         return maxElement;
     }
 
-    public static int[][] removeRowColumn(int row, int column, int[][] matrix){
+    public static double[][] removeRowColumn(int row, int column, double[][] matrix){
         System.out.println("row: "+ row + " col: " + column);
-        int[][] cutedMatrix = new int[matrix.length - 1][matrix.length - 1];
+        double[][] cutedMatrix = new double[matrix.length - 1][matrix.length - 1];
         for (int row1 = 0, row2 = 0; row1 < matrix.length; row1++, row2++){
             if (row1 == row){
                 //row1++;
