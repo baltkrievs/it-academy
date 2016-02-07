@@ -16,7 +16,7 @@ public class TaskB {
         return false;
     }
 
-    public void printMatrix(int numOfElements){
+    public void showMatrix(int numOfElements){
 
         int rowSize = (int)Math.ceil(Math.sqrt(numOfElements));
 
@@ -45,7 +45,7 @@ public class TaskB {
 //        for(int[] arr : matrix) {
 //            System.out.println(Arrays.toString(arr));
 //        }
-
+//
         for(int j = 0; j < matrix.length; j++){
             for(int k = 0; k < matrix.length; k++){
                 if(matrix[j][k] != 0)
@@ -54,5 +54,31 @@ public class TaskB {
             System.out.println();
         }
 
+    }
+
+    /**
+     *
+     * @param monthNumber enter month number
+     */
+    public void printMonth(int monthNumber){
+
+        String monthName = "";
+
+        switch (monthNumber) {
+            case 1: monthName = "Январь"; break;
+            case 2: monthName = "Февраль"; break;
+            case 3: monthName = "Март"; break;
+            case 4: monthName = "Аперль"; break;
+            case 5: monthName = "Май"; break;
+            case 6: monthName = "Июнь"; break;
+            case 7: monthName = "Июль"; break;
+            case 8: monthName = "Август"; break;
+            case 9: monthName = "Сентябрь"; break;
+            case 10: monthName = "Октябрь"; break;
+            case 11: monthName = "Ноябрь"; break;
+            case 12: monthName = "Декабрь"; break;
+            default: break;
+        }
+        System.out.println(monthName);
     }
 }
