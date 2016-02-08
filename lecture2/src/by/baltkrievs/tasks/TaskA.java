@@ -6,28 +6,7 @@ import java.io.InputStreamReader;
 
 public class TaskA {
 
-    public void run() throws IOException{
-        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        String rLine = bufferedReader.readLine();
-        bufferedReader.close();
-
-        String[] strArray = rLine.split(" ");
-        int[] intArray = new int[strArray.length];
-
-        for(int j = 0; j < strArray.length; j++){
-            try {
-                intArray[j] = Integer.parseInt(strArray[j]);
-            } catch (NumberFormatException e){
-                System.out.println("Seems like not a number was entered.. " +
-                        "Will be forced to int to prevent program fail");
-                char[] cArr = strArray[j].toCharArray();
-                for(char c : cArr){
-                    intArray[j] += (int)c;
-                }
-            }
-        }
-
+    public void findLongestAndShortestElement(int[] intArray){
         int numLength = 0;
         int numItself = 0;
 
@@ -53,7 +32,9 @@ public class TaskA {
         }
 
         System.out.println(numItself + " - " +numLength);
+    }
 
+    public void showMaxMinInArray(int[] intArray){
         int sum = 0;
         for(int i : intArray)
             sum += Integer.toString(i).length();
@@ -66,7 +47,9 @@ public class TaskA {
                 System.out.println("Number: " + i + "\tLength: " + length);
             }
         }
+    }
 
+    public void showFirstDifferentNumber(int[] intArray){
         for(int i : intArray){
             boolean isRepeating = false;
             char[] cArr = Integer.toString(i).toCharArray();
@@ -87,7 +70,9 @@ public class TaskA {
                 break;
             }
         }
+    }
 
+    public void showPalindrome(int[] intArray){
         for(int x : intArray){
             boolean isPalindrome = true;
             char[] array = Integer.toString(x).toCharArray();
@@ -101,6 +86,5 @@ public class TaskA {
             else
                 System.out.println("Palindrome: " + x);
         }
-
     }
 }
