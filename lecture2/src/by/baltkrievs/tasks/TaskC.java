@@ -31,9 +31,13 @@ public class TaskC {
         }
     }
 
-    //task2
-    public int[][] transposeMatrix(int[][] matrix){
-        int[][] transposedMatrix = new int[matrix.length][matrix.length];
+    /**
+     * Implementation of Task 2 from Group C
+     * @param matrix matrix to transpose
+     * @return transposed matrix
+     */
+    public double[][] transposeMatrix(double[][] matrix){
+        double[][] transposedMatrix = new double[matrix.length][matrix.length];
         for (int row = 0; row < matrix.length; row++){
             for(int col = 0; col < matrix.length; col++){
                 transposedMatrix[col][row] = matrix[row][col];
@@ -42,19 +46,26 @@ public class TaskC {
         return transposedMatrix;
     }
 
-    //task 3
-    public int[][] turnMatrix(int[][] matrix){
-        int[][] turnedMatrix = new int[matrix.length][matrix.length];
+    /**
+     * Implementation of Task 3 from Group C
+     * @param matrix
+     * @return
+     */
+    public double[][] turnMatrix(double[][] matrix){
+        double[][] turnedMatrix = new double[matrix.length][matrix.length];
         for (int row = 0; row < matrix.length; row++){
             for (int col = 0; col < matrix.length; col++){
                 turnedMatrix[matrix.length - 1 - col][row] = matrix[row][col];
-
             }
         }
         return turnedMatrix;
     }
 
-    //task 4
+    /**
+     * Implementation of Task 4 from Group C
+     * @param matrix
+     * @return
+     */
     public double[][] avgMatrix(double[][] matrix){
         double[][] avgMatrix = new double[matrix.length][matrix.length];
         for (int row = 0; row < matrix.length; row++){
@@ -70,7 +81,11 @@ public class TaskC {
         return matrix;
     }
 
-    //task 5
+    /**
+     * Implementation of Task 5 from Group C
+     * @param matrix
+     * @return
+     */
     public double[][] deleteMaxRowsCols(double[][] matrix){
         double maxElement = Matrix.getMaxElement(matrix);
         double[][] newMatrix = matrix;

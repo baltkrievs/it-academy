@@ -1,7 +1,14 @@
 package by.baltkrievs.tasks;
 
-public class TaskB {
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
+public class TaskB {
+    /**
+     * Implementation of Task 1 from Group B
+     * @param k is a integer for check if it belongs to interval
+     * @param interval two values array of integer for check
+     * @return returns true in case k belongs to interval false otherwise
+     */
     public boolean isBelongsToInterval(int k, int[] interval){
 
         if(interval.length != 2){
@@ -16,47 +23,62 @@ public class TaskB {
         return false;
     }
 
-    public void showMatrix(int numOfElements){
+    /**
+     * Implementation of Task 2 from Group B
+     * @param numOfElements count of numbers to show
+     * @param leftToRight mode of print. If true shows numbers from left
+     * to right otherwise from top to bottom
+     */
+    public void showMatrix(int numOfElements, boolean leftToRight){
 
         int rowSize = (int)Math.ceil(Math.sqrt(numOfElements));
-
-        for(int j = 1; j <= numOfElements; j++){
-            //System.out.print(j + "\t");
-
-            //if(j % rowSize == 0) System.out.println();
-        }
-
         int[][] matrix = new int[rowSize][rowSize];
+
         int currentElement = 1;
 
-            for(int x = 0; x < rowSize; x++){
-                boolean isStop = false;
-                for(int y = 0; y < rowSize; y++){
+        for (int x = 0; x < rowSize; x++) {
+            boolean isStop = false;
+            for (int y = 0; y < rowSize; y++) {
+                if(leftToRight){
+                    matrix[x][y] = currentElement;
+                }else {
                     matrix[y][x] = currentElement;
-                    currentElement++;
-                    if(currentElement > numOfElements) {
-                        isStop = true;
-                        break;
-                    }
                 }
-                if(isStop) break;
-            }
 
-//        for(int[] arr : matrix) {
-//            System.out.println(Arrays.toString(arr));
-//        }
-//
-        for(int j = 0; j < matrix.length; j++){
-            for(int k = 0; k < matrix.length; k++){
-                if(matrix[j][k] != 0)
-                    System.out.print(matrix[j][k] + "\t");
+                currentElement++;
+                if (currentElement > numOfElements) {
+                    isStop = true;
+                    break;
+                }
             }
-            System.out.println();
+            if (isStop) break;
         }
 
+        for (int j = 0; j < matrix.length; j++) {
+            for (int k = 0; k < matrix.length; k++) {
+                if (matrix[j][k] != 0)
+                    System.out.print(matrix[j][k] + "\t");
+            }
+                System.out.println();
+        }
     }
 
+    /**
+     * Implementation of public void showMatrix(int numOfElements, boolean leftToRight)
+     * with default value true;
+     * @param numOfElements count of numbers to show
+     * @see public void showMatrix(int numOfElements, boolean leftToRight)
+     */
+    public void showMatrix(int numOfElements){
+        showMatrix(numOfElements, true);
+    }
 
+    /**
+     * Implementation of Task 3 from Group B
+     * @param a parameter for Quadratic Equation
+     * @param b parameter for Quadratic Equation
+     * @param c parameter for Quadratic Equation
+     */
     public void solveQuadraticEquation(double a, double b, double c){
         if(a == 0){
             System.out.println("a should not be 0");
@@ -81,10 +103,15 @@ public class TaskB {
     }
 
     /**
-     *
-     * @param monthNumber enter month number
+     * Implementation of Task 4 from Group B
+     * @param monthNumber month number
      */
     public void printMonth(int monthNumber){
+
+        if(monthNumber < 1 || monthNumber > 12){
+            System.out.println("Нет месяца с номерм " + monthNumber +
+                    " Введите целое число в интервале 1 - 12");
+        }
 
         String monthName = "";
 

@@ -5,7 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class TaskA {
-
+    /**
+     * Implementation of Task 1 from Group A
+     *
+     * @param intArray Array of integer
+     *
+     */
     public void findLongestAndShortestElement(int[] intArray){
         int numLength = 0;
         int numItself = 0;
@@ -33,8 +38,13 @@ public class TaskA {
 
         System.out.println(numItself + " - " +numLength);
     }
-
-    public void showMaxMinInArray(int[] intArray){
+    /**
+     * Implementation of Task 2 from Group A
+     *
+     * @param intArray Array of integer
+     *
+     */
+    public void showNumbersLessThanAverage(int[] intArray){
         int sum = 0;
         for(int i : intArray)
             sum += Integer.toString(i).length();
@@ -48,7 +58,12 @@ public class TaskA {
             }
         }
     }
-
+    /**
+     * Implementation of Task 3 from Group A
+     *
+     * @param intArray Array of integer
+     *
+     */
     public void showFirstDifferentNumber(int[] intArray){
         for(int i : intArray){
             boolean isRepeating = false;
@@ -71,7 +86,12 @@ public class TaskA {
             }
         }
     }
-
+    /**
+     * Implementation of Task 4 from Group A
+     *
+     * @param intArray Array of integer
+     *
+     */
     public void showPalindrome(int[] intArray){
         for(int x : intArray){
             boolean isPalindrome = true;
